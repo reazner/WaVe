@@ -1,0 +1,10 @@
+
+WEC-Sim Read Input File ...   
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('simulationClass/checkinputs', 'C:\Users\agemt\WEC-Sim\source\objects\simulationClass.m', 162)" style="font-weight:bold">simulationClass/checkinputs</a> (<a href="matlab: opentoline('C:\Users\agemt\WEC-Sim\source\objects\simulationClass.m',162,0)">line 162</a>)
+The simMechanics file, C:\Users\agemt\WEC-Sim\WaVe\Geometry\Pend_test.slx, does not exist in the case
+directory
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wecSim', 'C:\Users\agemt\WEC-Sim\WaVe\wecSim.m', 67)" style="font-weight:bold">wecSim</a> (<a href="matlab: opentoline('C:\Users\agemt\WEC-Sim\WaVe\wecSim.m',67,0)">line 67</a>)
+simu.checkinputs;
+} 
+wecSim
