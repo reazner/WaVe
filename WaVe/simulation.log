@@ -1,15 +1,15 @@
 
 WEC-Sim Read Input File ...   
-Elapsed time is 0.069710 seconds.
+Elapsed time is 0.148094 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.101786 seconds.
+Elapsed time is 0.148132 seconds.
 
 WEC-Sim Simulation Settings:
 	Start Time                     (sec) = 0
 	End Time                       (sec) = 400
 	Time Step Size                 (sec) = 0.01
-	Ramp Function Time             (sec) = 100
+	Ramp Function Time             (sec) = 10
 	Total Number of Time Steps           = 40000 
 
 Wave Environment: 
@@ -20,14 +20,14 @@ Wave Environment:
 List of Body: Number of Bodies = 1 
 
 	***** Body Number 1, Name: body1 *****
-	Body CG                          (m) = [0,0,-0.8]
-	Body Mass                       (kg) = 7183.12 
-	Body Diagonal MOI              (kgm2)= [11923.9,17995.2,11923.9]
+	Body CG                          (m) = [0,0,-0.5]
+	Body Mass                       (kg) = 1237.06 
+	Body Diagonal MOI              (kgm2)= [919.27,887.23,1583.62]
 
 List of PTO(s): Number of PTOs = 1 
 
 	***** PTO Name: PTO1 *****
-	PTO Stiffness           (N/m;Nm/rad) = 0
+	PTO Stiffness           (N/m;Nm/rad) = 1
 	PTO Damping           (Ns/m;Nsm/rad) = 4
 
 List of Constraint(s): Number of Constraints = 1 
@@ -36,14 +36,12 @@ List of Constraint(s): Number of Constraints = 1
 
 
 Simulating the WEC device defined in the SimMechanics model C:\Users\agemt\WEC-Sim\WaVe\Pend_test.slx...   
-Elapsed time is 8.548259 seconds.
+Elapsed time is 10.797641 seconds.
 
 Post-processing and saving...   
-{'rms' requires <a href="matlab:matlab.internal.language.introspective.showAddon('SG', 'rms');">Signal Processing Toolbox</a>.
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('userDefinedFunctions', 'C:\Users\agemt\WEC-Sim\WaVe\userDefinedFunctions.m', 63)" style="font-weight:bold">userDefinedFunctions</a> (<a href="matlab: opentoline('C:\Users\agemt\WEC-Sim\WaVe\userDefinedFunctions.m',63,0)">line 63</a>)
-rms(output.ptos.powerInternalMechanics(:,5))
+ans =
 
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('wecSim', 'C:\Users\agemt\WEC-Sim\WaVe\wecSim.m', 369)" style="font-weight:bold">wecSim</a> (<a href="matlab: opentoline('C:\Users\agemt\WEC-Sim\WaVe\wecSim.m',369,0)">line 369</a>)
-    userDefinedFunctions;
-} 
+   7.7865e-04
+
+Elapsed time is 1.434279 seconds.

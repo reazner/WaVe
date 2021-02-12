@@ -8,7 +8,7 @@ catch
 end
 
 %Plot pitch response for body 1 = Hull
-figure
+figure 
 subplot(3,1,1)
 plot(output.bodies(1).time, output.bodies(1).position(:,5))
 title('Angular Position of Hull')
@@ -26,7 +26,7 @@ xlabel('time [s]')
 ylabel('Radians/s2')
 
 %Plot pitch forces for body 1
-output.plotForces(1,5);
+%output.plotForces(1,5);
 
 figure
 subplot(2,1,1)
@@ -59,6 +59,12 @@ plot(output.ptos.time,output.ptos.powerInternalMechanics(:,5));
 title('Power Output of PTO')
 xlabel('time [s]')
 ylabel('Power [W]')
+
+figure
+plot(output.bodies(1).time, output.bodies(1).forceLinearDamping(:,6))
+title('Hull Force Linear Damping')
+xlabel('time [s]')
+ylabel('N')
 
 rms(output.ptos.powerInternalMechanics(:,5))
 
