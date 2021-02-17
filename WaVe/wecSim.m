@@ -40,7 +40,7 @@
 bdclose('all'); clc; diary off; close all;
 clear body waves simu output pto constraint ptoSim mooring
 delete('*.log');
-diary('simulation.log')
+diary('simulation.log');
 
 
 %% Read input file

@@ -1,34 +1,34 @@
 
 WEC-Sim Read Input File ...   
-Elapsed time is 0.148094 seconds.
+Elapsed time is 0.101210 seconds.
 
 WEC-Sim Pre-processing ...   
-Elapsed time is 0.148132 seconds.
+Elapsed time is 0.198722 seconds.
 
 WEC-Sim Simulation Settings:
 	Start Time                     (sec) = 0
-	End Time                       (sec) = 400
+	End Time                       (sec) = 800
 	Time Step Size                 (sec) = 0.01
-	Ramp Function Time             (sec) = 10
-	Total Number of Time Steps           = 40000 
+	Ramp Function Time             (sec) = 100
+	Total Number of Time Steps           = 80000 
 
 Wave Environment: 
 	Wave Type                            = Regular Waves (Constant Hydrodynamic Coefficients)
-	Wave Height, H (m)                   = 1.7
-	Wave Period, T (sec)                 = 10.28
+	Wave Height, H (m)                   = 3
+	Wave Period, T (sec)                 = 10
 
 List of Body: Number of Bodies = 1 
 
 	***** Body Number 1, Name: body1 *****
-	Body CG                          (m) = [0,0,-0.5]
+	Body CG                          (m) = [0,0,-0.18]
 	Body Mass                       (kg) = 1237.06 
-	Body Diagonal MOI              (kgm2)= [919.27,887.23,1583.62]
+	Body Diagonal MOI              (kgm2)= [919.27,1583.62,887.23]
 
 List of PTO(s): Number of PTOs = 1 
 
 	***** PTO Name: PTO1 *****
-	PTO Stiffness           (N/m;Nm/rad) = 1
-	PTO Damping           (Ns/m;Nsm/rad) = 4
+	PTO Stiffness           (N/m;Nm/rad) = 0
+	PTO Damping           (Ns/m;Nsm/rad) = 0
 
 List of Constraint(s): Number of Constraints = 1 
 
@@ -36,12 +36,12 @@ List of Constraint(s): Number of Constraints = 1
 
 
 Simulating the WEC device defined in the SimMechanics model C:\Users\agemt\WEC-Sim\WaVe\Pend_test.slx...   
-Elapsed time is 10.797641 seconds.
+Elapsed time is 17.568764 seconds.
 
 Post-processing and saving...   
 
 ans =
 
-   7.7865e-04
+     0
 
-Elapsed time is 1.434279 seconds.
+Elapsed time is 1.060966 seconds.

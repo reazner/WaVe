@@ -6,8 +6,8 @@
 simu = simulationClass();                       % Initialize simulationClass
 simu.simMechanicsFile = 'Pend_test.slx';              % Simulink Model File
 simu.startTime = 0;                             % Simulation Start Time [s]
-simu.rampTime = 10;                         	% Wave Ramp Time [s]
-simu.endTime=400;                              % Simulation End Time [s]
+simu.rampTime = 100;                         	% Wave Ramp Time [s]
+simu.endTime=800;                              % Simulation End Time [s]
 simu.dt = 0.01;
 simu.CITime = 10;
 simu.domainSize = 5;
@@ -25,8 +25,8 @@ waves = waveClass('regular');
 % WINTER - T 12.97s, H 3.76m
 % SPRING - T 11.62s, H 2.8m
 % SUMMER - T 10.28s, 1.7m
-waves.H = 1.7;
-waves.T = 10.28;
+waves.H = 3;
+waves.T = 10;
                                   % Wave Period [s]
 
 
@@ -39,7 +39,7 @@ body(1).geometryFile = 'Geometry\Hull.stl';     % Geometry File
 body(1).name = 'Hull';
 %body(1).mass = 'equilibrium'; 
 body(1).mass = 1237.06;
-body(1).momOfInertia = [919.27 887.23 1583.62];
+body(1).momOfInertia = [919.27 1583.62  887.23];
 
 
 % Pendulum
@@ -49,10 +49,10 @@ body(2) = bodyClass('');          % Initialize bodyClass for Pend | leave string
 body(2).nhBody = 1;                 % define as non-hydrodynamic body
 body(2).name = 'Pendulum';
 body(2).geometryFile = 'Geometry\PenArm.stl';     % Location of Geometry File
-body(2).mass = 102;
-body(2).momOfInertia = [33.49 33.6 0.67];  % Moment of Inertia [kg-m^2]
-body(2).cb = [0 1 -.53];
-body(2).cg = [0 1 -.53];
+body(2).mass = 102.46
+body(2).momOfInertia = [ 68.79 .58 68.83 ];  % Moment of Inertia [kg-m^2]
+body(2).cb = [0.1 0 .18]
+body(2).cg = [0.1 0 .18];
 body(2).dispVol = 0;
 
 
@@ -72,18 +72,18 @@ pto(1) = ptoClass('PTO1');                      % Initialize ptoClass for PTO1
 
 pto(1).k = 0;                                	% PTO Stiffness Coeff linear [N/m] rot torsion spring: [Nm/rad]
 % this also affect power output, bigger isn't necessarily better
-pto(1).c = 4  % PTO Damping Coeff linear [Ns/m rot torsional damping[Nsm/rad]
+pto(1).c = 0;  % PTO Damping Coeff linear [Ns/m rot torsional damping[Nsm/rad]
 
-pto(1).loc = [0 0.01 -.53];                        % PTO Location [m]
+pto(1).loc = [0 0.1 .18];                        % PTO Location [m]
 % yaw
 pto(1).orientation.y = [0,0,1];
 pto(1).orientation.z = [0,1,0];
 
 
 %% Mooring
-%Moordyn http://www.matt-hall.ca/files/MoorDyn%20Users%20Guide%202017-08-16.pdf
+% %Moordyn http://www.matt-hall.ca/files/MoorDyn%20Users%20Guide%202017-08-16.pdf
 % mooring(1) = mooringClass('mooring');       % Initialize mooringClass
 % mooring(1).moorDynLines = 1;                % Specify number of lines
-% mooring(1).moorDynNodes(1) = 10;
+% mooring(1).moorDynNodes(1) = 1;
 % mooring(1).initDisp.initLinDisp = [0 0 0];      % Initial Displacement
 

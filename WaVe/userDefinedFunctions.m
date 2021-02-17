@@ -26,7 +26,7 @@ xlabel('time [s]')
 ylabel('Radians/s2')
 
 %Plot pitch forces for body 1
-%output.plotForces(1,5);
+output.plotForces(1,5);
 
 figure
 subplot(2,1,1)
