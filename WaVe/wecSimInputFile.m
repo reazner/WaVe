@@ -7,7 +7,7 @@ simu = simulationClass();                       % Initialize simulationClass
 simu.simMechanicsFile = 'Pend_test.slx';              % Simulink Model File
 simu.startTime = 0;                             % Simulation Start Time [s]
 simu.rampTime = 100;                         	% Wave Ramp Time [s]
-simu.endTime=800;                              % Simulation End Time [s]
+simu.endTime=400;                              % Simulation End Time [s]
 simu.dt = 0.01;
 simu.CITime = 10;
 simu.domainSize = 5;
@@ -34,12 +34,12 @@ waves.T = 10;
 % Hull
 % for hydro bodies COG already defined in h5 file
 
-body(1) = bodyClass('Hydro/WaVe.h5');          % Initialize bodyClass for Hull
+body(1) = bodyClass('Hydro/WaVe_Tech.h5');          % Initialize bodyClass for Hull
 body(1).geometryFile = 'Geometry\Hull.stl';     % Geometry File
 body(1).name = 'Hull';
 %body(1).mass = 'equilibrium'; 
-body(1).mass = 1237.06;
-body(1).momOfInertia = [919.27 1583.62  887.23];
+body(1).mass = 155.3281711828;
+body(1).momOfInertia = [108.904778888941  108.904778888941 52.0268266554453];
 
 
 % Pendulum
@@ -49,10 +49,10 @@ body(2) = bodyClass('');          % Initialize bodyClass for Pend | leave string
 body(2).nhBody = 1;                 % define as non-hydrodynamic body
 body(2).name = 'Pendulum';
 body(2).geometryFile = 'Geometry\PenArm.stl';     % Location of Geometry File
-body(2).mass = 102.46
-body(2).momOfInertia = [ 68.79 .58 68.83 ];  % Moment of Inertia [kg-m^2]
-body(2).cb = [0.1 0 .18]
-body(2).cg = [0.1 0 .18];
+body(2).mass = 53.1882413061999
+body(2).momOfInertia = [ 8.25243822670341e-03 0.159272057775376 0.158028339248302 ];  % Moment of Inertia [kg-m^2]
+body(2).cb = [0.168 0 0.35052]
+body(2).cg = [0.168 0 0.35052];
 body(2).dispVol = 0;
 
 
@@ -62,7 +62,10 @@ body(2).dispVol = 0;
 % 1 = Pitch
 constraint(1)= constraintClass('Constraint1');  % Initialize constraintClass for Constraint1
 constraint(1).loc = [0 0 0];                  % Constraint Location [m]
-
+constraint(1).orientation.z =  [0 0 1];                      %Direction of the constraint's Z-coordinate. Default = [0 0 1]
+            
+constraint(1).orientation.y=[0 1 0];                 % Direction of the constraint's Y-coordinate. Default = [0 1 0]
+           
 
 %% PTO Parameters 
 
@@ -72,9 +75,9 @@ pto(1) = ptoClass('PTO1');                      % Initialize ptoClass for PTO1
 
 pto(1).k = 0;                                	% PTO Stiffness Coeff linear [N/m] rot torsion spring: [Nm/rad]
 % this also affect power output, bigger isn't necessarily better
-pto(1).c = 0;  % PTO Damping Coeff linear [Ns/m rot torsional damping[Nsm/rad]
+pto(1).c = .3;  % PTO Damping Coeff linear [Ns/m rot torsional damping[Nsm/rad]
 
-pto(1).loc = [0 0.1 .18];                        % PTO Location [m]
+pto(1).loc = [0.168 0 0.35052];                        % PTO Location [m]
 % yaw
 pto(1).orientation.y = [0,0,1];
 pto(1).orientation.z = [0,1,0];
